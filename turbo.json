@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "lint": {},
+    "lint:css": {},
+    "typecheck": {},
+    "test": {},
+    "test:ci": {},
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "test:watch": {
+      "cache": false
+    }
+  },
+  "globalEnv": ["VERCEL_ENV", "NEXT_PUBLIC_STAGE"],
+  "globalDependencies": ["tsconfig.json"]
+}
